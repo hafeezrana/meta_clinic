@@ -7,4 +7,8 @@ class ImagePath {
   ///----------Logo----------
 
   static const String logo = 'assets/images/logo_white.png';
+  static const String logo2 = 'assets/images/logo2.png';
+
+  /// - ------- congrats---
+  static const String congrats = 'assets/images/congrats.png';
 }

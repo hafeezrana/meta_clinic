@@ -3,7 +3,10 @@ import 'package:get/get.dart';
 import 'package:meta_clinic/utils/assets_path_consts.dart';
 import 'package:meta_clinic/utils/colors_const.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:meta_clinic/utils/navigation.dart';
 import 'package:meta_clinic/views/widget/text_styles.dart';
+
+import 'views/auth/auth_first_view.dart';
 
 class OnboardView extends ConsumerWidget {
   OnboardView({super.key});
@@ -47,20 +50,25 @@ class OnboardView extends ConsumerWidget {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
                           color: idx == currentIndex
-                              ? ConstColors.greyBlueColor
-                              : ConstColors.lightgreyBlueColor),
+                              ? ConstColors.lightBlueColor
+                              : ConstColors.lightGreyBlueColor),
                     ),
                   );
                 },
               ),
             ),
-            const CircleAvatar(
-              radius: 27,
-              backgroundColor: ConstColors.greyBlueColor,
-              child: Icon(
-                Icons.arrow_forward,
-                size: 30,
-                color: ConstColors.whiteColor,
+            GestureDetector(
+              onTap: () {
+                Appnav.pushReplacemend(context, const AuthFirstView());
+              },
+              child: const CircleAvatar(
+                radius: 27,
+                backgroundColor: ConstColors.lightBlueColor,
+                child: Icon(
+                  Icons.arrow_forward,
+                  size: 30,
+                  color: ConstColors.whiteColor,
+                ),
               ),
             )
           ],
