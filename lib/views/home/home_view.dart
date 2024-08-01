@@ -11,7 +11,10 @@ import 'package:meta_clinic/views/widget/appbar.dart';
 import 'package:meta_clinic/views/widget/text_styles.dart';
 
 import '../about/aboutus_view.dart';
+import '../branches/branch_location_view.dart';
 import '../reports/reports_view.dart';
+import '../samplings/home_sampling_view.dart';
+import '../tests/testlist_view.dart';
 import '../widget/svg_img.dart';
 
 class HomeView extends ConsumerStatefulWidget {
@@ -21,7 +24,6 @@ class HomeView extends ConsumerStatefulWidget {
   ConsumerState createState() => _HomeViewState();
 }
 
-int? selectedIndex;
 final images = [
   'https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg',
   'https://img.lovepik.com/photo/40173/3253.jpg_wh860.jpg',
@@ -35,6 +37,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ConstColors.whiteColor,
       appBar: customAppBar(title: 'Home', action: [
         const Padding(
           padding: EdgeInsets.all(8.0),
@@ -79,7 +82,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
                       ))
                   .toList(),
               options: CarouselOptions(
-                height: 200,
+                height: 160.h,
                 aspectRatio: 16 / 14,
                 viewportFraction: 1,
                 initialPage: 0,
@@ -95,15 +98,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
                 scrollDirection: Axis.horizontal,
               ),
             ),
-            // ClipRRect(
-            //   borderRadius: BorderRadius.circular(12),
-            //   child: Image.network(
-            //     'https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg',
-            //     fit: BoxFit.fill,
-            //     width: Get.width,
-            //     height: Get.height * 0.25,
-            //   ),
-            // ),
+
             SizedBox(height: 12.h),
             GridView.builder(
               itemCount: cardsData.length,
@@ -118,14 +113,20 @@ class _HomeViewState extends ConsumerState<HomeView> {
                 return GestureDetector(
                   onTap: () {
                     if (index > 5) {
-                      selectedIndex = null;
+                      ref.read(indexProvider.notifier).state = null;
                     }
-                    selectedIndex = index;
-                    setState(() {});
+                    ref.read(indexProvider.notifier).state = index;
+
                     if (index == 0) {
                       Appnav.push(context, const AboutusView());
                     } else if (index == 1) {
                       Appnav.push(context, const ReportsView());
+                    } else if (index == 2) {
+                      Appnav.push(context, const TestlistView());
+                    } else if (index == 3) {
+                      Appnav.push(context, HomeSamplingView());
+                    } else if (index == 4) {
+                      Appnav.push(context, const BranchLocationView());
                     }
                   },
                   child: myHomeCard(
@@ -211,3 +212,7 @@ List<CardData> cardsData = [
   CardData(title: "Our Branches", iconPath: ImagePath.location),
   CardData(title: "Consult Doctor", iconPath: ImagePath.stethoScope),
 ];
+
+final indexProvider = StateProvider<int?>((ref) {
+  return null;
+});

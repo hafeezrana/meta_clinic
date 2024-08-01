@@ -10,6 +10,7 @@ class ReusableTextField extends StatelessWidget {
     this.onChanged,
     this.title,
     this.label,
+    this.elevation,
     this.prefixIcon,
     this.maxLines,
     this.minLines,
@@ -42,6 +43,7 @@ class ReusableTextField extends StatelessWidget {
   int? maxLines;
   bool? obsecureText;
   int? minLines;
+  double? elevation;
   String? hintText;
   TextInputType? keyBoardType;
 
@@ -50,7 +52,7 @@ class ReusableTextField extends StatelessWidget {
     return SizedBox(
       height: 60,
       child: Card(
-        elevation: 6,
+        elevation: elevation ?? 6,
         borderOnForeground: true,
         // surfaceTintColor: Colors.white70.withOpacity(0.6),
         shadowColor: Colors.grey.withOpacity(0.4),

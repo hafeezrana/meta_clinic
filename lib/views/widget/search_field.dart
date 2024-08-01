@@ -8,6 +8,7 @@ class SearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 8,
+      color: ConstColors.whiteColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30),
       ),

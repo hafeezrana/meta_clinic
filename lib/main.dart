@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:meta_clinic/onboard_view.dart';
+import 'package:meta_clinic/utils/colors_const.dart';
 import 'package:meta_clinic/views/home/home_view.dart';
 import 'package:meta_clinic/views/splash.dart';
 
@@ -21,14 +22,16 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: GetMaterialApp(
-          title: 'Flutter Demo',
+          title: 'Meta Medical Clinic',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             fontFamily: 'Rubik',
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: ConstColors.whiteColor,
+            ),
             useMaterial3: true,
           ),
-          home: HomeView()
+          home: const HomeView()
           // SplashView(),
           ),
     );
