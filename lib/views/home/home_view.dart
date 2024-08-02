@@ -11,6 +11,8 @@ import 'package:meta_clinic/views/widget/appbar.dart';
 import 'package:meta_clinic/views/widget/text_styles.dart';
 
 import '../about/aboutus_view.dart';
+import '../account/profile_acccount_view.dart';
+import '../appointment/appointment_menu_view.dart';
 import '../branches/branch_location_view.dart';
 import '../reports/reports_view.dart';
 import '../samplings/home_sampling_view.dart';
@@ -39,20 +41,23 @@ class _HomeViewState extends ConsumerState<HomeView> {
     return Scaffold(
       backgroundColor: ConstColors.whiteColor,
       appBar: customAppBar(title: 'Home', action: [
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Icon(
-            Icons.account_circle_rounded,
-            color: Colors.white,
-            size: 27,
+        GestureDetector(
+          onTap: () {
+            Appnav.push(context, const ProfileView());
+          },
+          child: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Icon(
+              Icons.account_circle_rounded,
+              color: Colors.white,
+              size: 27,
+            ),
           ),
         )
       ]),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -61,11 +66,6 @@ class _HomeViewState extends ConsumerState<HomeView> {
                   'Hi Doctor Flutter',
                   style: MyTextStyles.largeText,
                 ),
-                Icon(
-                  Icons.account_circle_rounded,
-                  size: 25,
-                  color: ConstColors.grey,
-                )
               ],
             ),
             SizedBox(height: 4.h),
@@ -127,6 +127,8 @@ class _HomeViewState extends ConsumerState<HomeView> {
                       Appnav.push(context, HomeSamplingView());
                     } else if (index == 4) {
                       Appnav.push(context, const BranchLocationView());
+                    } else if (index == 5) {
+                      Appnav.push(context, const AppointmentMenuView());
                     }
                   },
                   child: myHomeCard(

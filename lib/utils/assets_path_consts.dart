@@ -26,4 +26,7 @@ class ImagePath {
   static const String aboutUs = 'assets/images/about.png';
   static const String location = 'assets/images/location.png';
   static const String stethoScope = 'assets/images/stethoscope.png';
+  static const String heart = 'assets/images/heart.png';
+
+  ///
 }
