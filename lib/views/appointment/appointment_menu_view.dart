@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:meta_clinic/utils/assets_path_consts.dart';
 import 'package:meta_clinic/utils/colors_const.dart';
 import 'package:meta_clinic/utils/navigation.dart';
+import 'package:meta_clinic/views/appointment/specialist_profile_view.dart';
 import 'package:meta_clinic/views/appointment/specialists_view.dart';
 import 'package:meta_clinic/views/widget/appbar.dart';
 import 'package:meta_clinic/views/widget/search_field.dart';
@@ -132,67 +133,75 @@ class _AppointmentMenuViewState extends ConsumerState<AppointmentMenuView> {
                   childAspectRatio: 6 / 6.5,
                 ),
                 itemBuilder: (context, index) {
-                  return Card(
-                    color: ConstColors.whiteColor,
-                    elevation: 6,
-                    child: Column(
-                      children: [
-                        SizedBox(height: 6.h),
-                        Card(
-                          elevation: 8,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(200),
-                          ),
-                          color: ConstColors.whiteColor,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(200),
-                            child: Image.network(
-                              'https://media.istockphoto.com/id/1413129950/vector/avatar-of-woman-doctor-with-brown-hair-doctor-with-stethoscope-vector-illustration.jpg?s=612x612&w=0&k=20&c=J62PxR-p5QeTpqgk-5C8naTrbZdBUnhuxh6sub1YpBg=',
-                              height: 90,
-                              width: 90,
+                  return GestureDetector(
+                    onTap: () {
+                      Appnav.push(
+                        context,
+                        SpecialistProfileView(),
+                      );
+                    },
+                    child: Card(
+                      color: ConstColors.whiteColor,
+                      elevation: 6,
+                      child: Column(
+                        children: [
+                          SizedBox(height: 6.h),
+                          Card(
+                            elevation: 8,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(200),
                             ),
-                          ),
-                        ),
-                        SizedBox(height: 10.h),
-                        Text(
-                          'Dr. Zaibun Nisa',
-                          style: MyTextStyles.largeText
-                              .copyWith(color: ConstColors.lightBlueColor),
-                        ),
-                        Text(
-                          'Cardiology Specialist',
-                          maxLines: 1,
-                          textAlign: TextAlign.start,
-                          style: MyTextStyles.extraSmallText.copyWith(
-                              color: ConstColors.lightBlueColor,
-                              fontWeight: FontWeight.w700),
-                        ),
-                        SizedBox(height: 4.h),
-                        SizedBox(
-                          width: Get.width * 0.35,
-                          child: Center(
-                            child: RatingBar.builder(
-                              initialRating: 4,
-                              minRating: 1,
-                              direction: Axis.horizontal,
-                              allowHalfRating: true,
-                              itemCount: 5,
-                              itemSize: 16,
-                              itemPadding:
-                                  const EdgeInsets.symmetric(horizontal: 2.0),
-                              itemBuilder: (context, _) => const Center(
-                                child: Icon(
-                                  Icons.star,
-                                  color: Colors.amber,
-                                ),
+                            color: ConstColors.whiteColor,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(200),
+                              child: Image.network(
+                                'https://media.istockphoto.com/id/1413129950/vector/avatar-of-woman-doctor-with-brown-hair-doctor-with-stethoscope-vector-illustration.jpg?s=612x612&w=0&k=20&c=J62PxR-p5QeTpqgk-5C8naTrbZdBUnhuxh6sub1YpBg=',
+                                height: 90,
+                                width: 90,
                               ),
-                              onRatingUpdate: (rating) {
-                                print(rating);
-                              },
                             ),
                           ),
-                        ),
-                      ],
+                          SizedBox(height: 10.h),
+                          Text(
+                            'Dr. Zaibun Nisa',
+                            style: MyTextStyles.largeText
+                                .copyWith(color: ConstColors.lightBlueColor),
+                          ),
+                          Text(
+                            'Cardiology Specialist',
+                            maxLines: 1,
+                            textAlign: TextAlign.start,
+                            style: MyTextStyles.extraSmallText.copyWith(
+                                color: ConstColors.lightBlueColor,
+                                fontWeight: FontWeight.w700),
+                          ),
+                          SizedBox(height: 4.h),
+                          SizedBox(
+                            width: Get.width * 0.35,
+                            child: Center(
+                              child: RatingBar.builder(
+                                initialRating: 4,
+                                minRating: 1,
+                                direction: Axis.horizontal,
+                                allowHalfRating: true,
+                                itemCount: 5,
+                                itemSize: 16,
+                                itemPadding:
+                                    const EdgeInsets.symmetric(horizontal: 2.0),
+                                itemBuilder: (context, _) => const Center(
+                                  child: Icon(
+                                    Icons.star,
+                                    color: Colors.amber,
+                                  ),
+                                ),
+                                onRatingUpdate: (rating) {
+                                  print(rating);
+                                },
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 },

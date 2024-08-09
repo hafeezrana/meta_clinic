@@ -3,7 +3,10 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:meta_clinic/utils/colors_const.dart';
+import 'package:meta_clinic/utils/navigation.dart';
 import 'package:meta_clinic/views/widget/text_styles.dart';
+
+import '../specialist_profile_view.dart';
 
 class DoctorCard extends StatelessWidget {
   const DoctorCard({super.key});
@@ -102,7 +105,12 @@ class DoctorCard extends StatelessWidget {
                           elevation: 4,
                           color: ConstColors.lightBlueColor,
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Appnav.push(
+                                context,
+                                SpecialistProfileView(),
+                              );
+                            },
                             child: Padding(
                               padding: const EdgeInsets.symmetric(
                                   vertical: 2, horizontal: 8.0),

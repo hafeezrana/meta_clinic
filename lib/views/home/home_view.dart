@@ -28,11 +28,9 @@ class HomeView extends ConsumerStatefulWidget {
 
 final images = [
   'https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg',
-  'https://img.lovepik.com/photo/40173/3253.jpg_wh860.jpg',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBn-DeCKVKHm5hZB9-DUtIHL0vLTo4kVuCmg&s',
-  'https://i.pinimg.com/736x/7c/27/30/7c2730d82250efd9f24a4a8f827deb1e.jpg',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiIwy0Z4bVsZ6DmlxDnosJLgW9QAssls5lAA&s'
-  // 'https://media.istockphoto.com/id/532394887/photo/medical-students-walking-through-corridor.jpg?s=612x612&w=0&k=20&c=OfgqmhMALUsNwHvTj9Tds56C7boSpb6Yt8ZwCuFIzIw='
+      'https://media.istockphoto.com/id/532394887/photo/medical-students-walking-through-corridor.jpg?s=612x612&w=0&k=20&c=OfgqmhMALUsNwHvTj9Tds56C7boSpb6Yt8ZwCuFIzIw='
 ];
 
 class _HomeViewState extends ConsumerState<HomeView> {
