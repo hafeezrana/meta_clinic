@@ -55,7 +55,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
       ]),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
+        child: ListView(
           children: [
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

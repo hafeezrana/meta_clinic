@@ -22,18 +22,17 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: GetMaterialApp(
-          title: 'Meta Medical Clinic',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            fontFamily: 'Rubik',
-            colorScheme: ColorScheme.fromSeed(
-              seedColor: ConstColors.whiteColor,
-            ),
-            useMaterial3: true,
+        title: 'Meta Medical Clinic',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          fontFamily: 'Rubik',
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: ConstColors.whiteColor,
           ),
-          home: const HomeView()
-          // SplashView(),
-          ),
+          useMaterial3: true,
+        ),
+        home: const SplashView(),
+      ),
     );
   }
 }
