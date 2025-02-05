@@ -1,16 +1,25 @@
-# meta_clinic
+# 🏥 Meta Clinic - Medical Appointment Booking App UI
 
-A new Flutter project.
+Meta Clinic is a **Flutter-based UI project** that showcases a sleek and intuitive medical clinic appointment booking system. This app provides a modern interface for patients to book doctor consultations effortlessly.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## 📽️ Demo Video
+🎥 **Watch the live demo here:** [Meta Clinic Demo](https://web.facebook.com/share/r/1VUk8nxDjy/)
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## ✨ Features
+✅ **Beautiful UI for medical appointment booking**  
+✅ **Doctor profiles with ratings & specialties**  
+✅ **Appointment scheduling with date & time picker**  
+✅ **Intuitive navigation and modern design**  
+✅ **Flutter animations for smooth user experience**  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🚀 Getting Started
+
+### **1️⃣ Clone the Repository**
+```sh
+git clone https://github.com/yourusername/meta-clinic.git
+cd meta-clinic
