@@ -21,5 +21,4 @@ Meta Clinic is a **Flutter-based UI project** that showcases a sleek and intuiti
 
 ### **1️⃣ Clone the Repository**
 ```sh
-git clone https://github.com/yourusername/meta-clinic.git
-cd meta-clinic
+git clone https://github.com/hafeezrana/meta_clinic.git
